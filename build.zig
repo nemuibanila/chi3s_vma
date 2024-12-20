@@ -12,7 +12,7 @@ pub fn build(b: *std.Build) void {
 
     lib.linkLibC();
     lib.linkLibCpp();
-    lib.linkSystemLibrary("vulkan");
+    //    lib.linkSystemLibrary("vulkan");
     lib.addCSourceFile(.{ .file = b.path("src/vk_mem_alloc.cc"), .flags = &.{"-Wno-nullability-completeness"} });
     lib.installHeader(b.path("src/vk_mem_alloc.h"), "vk_mem_alloc.h");
     b.installArtifact(lib);
